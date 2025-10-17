@@ -13,8 +13,8 @@ blocks:
             - checkout
             - cd 2-docker-build/
             - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
-            - docker build -t hello-app .
-            - docker tag hello-app "$DOCKER_USERNAME"/hello-app
-            - docker push "$DOCKER_USERNAME"/hello-app
+            - docker build -t app123 .
+            - docker tag app123 "$DOCKER_USERNAME"/app123
+            - docker push "$DOCKER_USERNAME"/app123
       secrets:
         - name: Dockerhub
