@@ -13,6 +13,7 @@ blocks:
             - checkout
             - cd 2-docker-build/
             - docker build -t myapp .
-            - 'docker run -it -p 4000:4000 myapp'
+            - docker tag myapp bikajkula/myapp
+            - docker push bikajkula/semaphore_test
       secrets:
         - name: Dockerhub
