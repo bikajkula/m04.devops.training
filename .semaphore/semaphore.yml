@@ -11,9 +11,9 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
-            - cd 2-docker-build/
-            - docker build -t myapp .
-            - docker tag myapp bikajkula/myapp
-            - docker push bikajkula/semaphore_test
+            - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
+            - docker build -t hello-app .
+            - docker tag hello-app "$DOCKER_USERNAME"/hello-app
+            - docker push "$DOCKER_USERNAME"/hello-app
       secrets:
         - name: Dockerhub
