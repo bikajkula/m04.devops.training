@@ -17,4 +17,4 @@ blocks:
             - docker tag app123 "$DOCKER_USERNAME"/app123
             - docker push "$DOCKER_USERNAME"/app123
       secrets:
-        - name: Dockerhub
+        - name: docker
